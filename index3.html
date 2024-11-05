@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+    <header>
+        <nav class="navbar">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#about">Who am I?</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero-section row">
+            <div class="col-3"></div>
+            <div class="hero-image col-3">
+                <img src="images/henry.jpg" alt="Profile Picture">
+            </div>
+            <div class="hero-text col-2">
+                <h1>Hey!</h1>
+                <p>You found me!</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+    </header>
+    <main>
+        <section class="" id="about">
+            <div class="details">
+                <p>
+                    Hi, I'm Kudirat, a passionate PHP/Laravel Developer with two years of hands-on
+                     experience in crafting high-performance web applications. I specialize in creating
+                      seamless user experiences through well-architected, efficient code that adheres
+                       to the best practices in the industry.
+                </p>
+                <p class="mt-2">
+                    With a deep understanding of PHP and expertise in the Laravel framework,
+                     I am committed to continuous learning and improvement, always on the lookout
+                      for new technologies and innovative solutions that can elevate my work. 
+                      My goal is to stay ahead of the curve, ensuring that every project I take 
+                      on is not only functional but also sets a high standard for quality and performance.
+                </p>
+                <p>
+                    Whether working on complex backend systems or integrating third-party APIs, 
+                    I bring a meticulous attention to detail and a passion for problem-solving 
+                    to every task. I thrive in collaborative environments, and I'm always eager 
+                    to contribute to projects that challenge me to grow as a developer.
+                </p>
+   
+         
+
+</div>
+        </section>
+        <section class="contact-section">
+            <p>Contact me</p>
+            <div class="contact-icons">
+                <a href="https://www.instagram.com/_funmiolawale/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/2348067522171" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" onclick="document.getElementById('phoneModal').style.display='block'"><i class="fas fa-phone-alt"></i></a>
+                <a href="mailto:folawale119@gmail.com"><i class="fas fa-envelope"></i></a>
+
+                <div id="phoneModal" style="display:none; position:fixed; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:1; text-align:center;" onclick="closeModal(event)">
+                    <div style="background-color:#fff; margin:15% auto; padding:20px; border-radius:5px; width:300px; position:relative;">
+                     <p>Call me at: <span id="phoneNumber">+234 123 456 7890</span></p>
+                      <button onclick="copyPhoneNumber()">Copy Number</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="education-section" id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>Federal Polytechnic Offa, Kwara state.</h3>
+                    <p>Statistics</p>
+                </div>
+                <div class="education-year">
+                    <span>December 2019 - December 2021</span>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>Moat Academy For Developers</h3>
+                    <p>Full Stack Developer</p>
+                </div>
+                <div class="education-year">
+                    <span>January 2022 - March 2022</span>
+                </div>
+            </div>
+            
+        </section>
+        
+
+         <section class="skills-section" id="skill">
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>PHP</h3>
+                    <p>Expert in developing server-side applications and RESTful APIs.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Laravel</h3>
+                    <p>Proficient in building scalable web applications and RESTful APIs with Laravel framework.</p>
+                </div>
+            </div>            
+        </section>
+    </main>
+    <section class="contact-section" id="contact">
+        <h2>Say Hallo to Me</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Contact" required>
+            </div>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <h3>Or You Can Find me at</h3>
+            <div class="contact-icons">
+                <a href="https://www.instagram.com/_funmiolawale/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/2348067522171" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:folawale119@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><marquee behavior="2" direction="3">Email me at folawale119@gmail.com</marquee></p>
+    </footer>
+    </div>
+
+<script>
+    function copyPhoneNumber() {
+        var phoneNumber = document.getElementById("phoneNumber").textContent;
+        navigator.clipboard.writeText(phoneNumber).then(function() {
+            alert("Phone number copied to clipboard");
+            document.getElementById('phoneModal').style.display = 'none'; // Close the modal after copying
+        }, function() {
+            alert("Failed to copy phone number");
+        });
+        }
+
+        function closeModal(event) {
+        var modal = document.getElementById('phoneModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+    </script>
+</body>
+</html> 
+
